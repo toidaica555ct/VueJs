@@ -15,11 +15,14 @@
         <div v-on:mouseover="TinhToaDo">
             <h1> Bấm nút để tăng giá trị</h1>
             <button v-on:click="TangGiatri">Bấm</button>
+            <span v-on:mouseover.top="">Dừng sự kiện</span>
             <p>Giá trị : {{dem}}</p>
-            <p>Tọa độ của chuột:{{x}} / {{y}}</p>
-            <span v-on:mouseover="DungChuot">Dừng sự kiện</span>
+            <p>Tọa độ của chuột:{{x}} / {{y}}</p>        
         </div>
 
+        <div class="">
+            <input type="text" >
+        </div>
     </div>
     <script>
         new Vue({
@@ -38,8 +41,11 @@
                     this.y = event.clientY;
                 },
                 DungChuot: function(event){
-                   event.stopPropagation(); 
-                }
+                   event.stopPropagation(); // dừng sự kiện của event mouseover
+                },
+                BanPhim: function(){
+                    alert("Hello HRM!");
+                },
             }
         });
     </script>

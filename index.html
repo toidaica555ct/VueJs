@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="obj">
+
+        <div v-on:mouseover="TinhToaDo">
+            <h1> Bấm nút để tăng giá trị</h1>
+            <button v-on:click="TangGiatri">Bấm</button>
+            <p>Giá trị : {{dem}}</p>
+            <p>Tọa độ của chuột:{{x}} / {{y}}</p>
+            <span v-on:mouseover="DungChuot">Dừng sự kiện</span>
+        </div>
+
+    </div>
+    <script>
+        new Vue({
+            el: '#obj',
+            data: {
+                dem: 0,
+                x: 0,
+                y: 0,
+            },
+            methods: {
+                TangGiatri: function () {
+                    this.dem++;
+                },
+                TinhToaDo: function (event) {
+                    this.x = event.clientX;
+                    this.y = event.clientY;
+                },
+                DungChuot: function(event){
+                   event.stopPropagation(); 
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

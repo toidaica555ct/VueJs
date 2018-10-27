@@ -15,13 +15,15 @@
         <div v-on:mouseover="TinhToaDo">
             <h1> Bấm nút để tăng giá trị</h1>
             <button v-on:click="TangGiatri">Bấm</button>
+            <button v-on:click="dem++">Bấm Java Script</button>
             <span v-on:mouseover.top="">Dừng sự kiện</span>
             <p>Giá trị : {{dem}}</p>
+            <p>Giá trị : {{dem > 20 ? 'Bạn vượt quá giới hạn!' : 'Bạn nắm trong giới hạn'}}</p>
             <p>Tọa độ của chuột:{{x}} / {{y}}</p>        
         </div>
 
         <div class="">
-            <input type="text" >
+            <input type="text" @keyup.enter="BanPhim">
         </div>
     </div>
     <script>
@@ -45,7 +47,7 @@
                 },
                 BanPhim: function(){
                     alert("Hello HRM!");
-                },
+                }
             }
         });
     </script>

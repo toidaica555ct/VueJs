@@ -11,16 +11,31 @@
 
 <body>
     <div id="app">
-        <input type="text">
-        <p>{{name}}</p>
+        <p>Giá trị A: {{tanga}}</p>
+        <p>Giá trị B: {{tangb}}</p>
+        <button v-on:click="a++">Tăng A</button>
+        <button v-on:click="b++">Tăng B</button>
     </div>
     <script>
         new Vue({
             el: '#app',
             data: {
-
+                a: 0,
+                b: 0,
             },
+            computed: {
+                tanga: function () {
+                    console.log('Gọi funtion a');
+                    return this.a;
+                },
+                tangb: function () {
+                    console.log('Gọi funtion b');
+                    return this.b;
+                }
+            },
+            methods: {
 
+            }
         });
     </script>
 </body>

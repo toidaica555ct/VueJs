@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue Js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{diem}}</p>
+    </div>
+    <script>
+        var aap = new Vue({
+            el: '#app',
+            data: {
+                diem: ' Bạn có môn toán 7 điểm'
+            },
+            watch: {
+                diem: function (newVue) {
+                    alert('Điểm của bạn được thay đổi sang điểm khác!')
+                }
+            }
+        });
+        aap.diem = 'Bạn có môn toán 8 điểm'
+    </script>
+</body>
+
+</html>

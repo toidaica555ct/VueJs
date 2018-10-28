@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue Js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(menu, i) in menus">{{ menu }} với index là: {{ i }}</li>
+        </ul>
+
+        <ul>
+            <li v-for="student in students">
+                <div v-for="(value, key, index) in student">{{ key }}: {{ value }} ({{ index }})</div>
+            </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                menus: ['Home', 'About', 'Blog', 'Contact', 'FAQ'],
+                students:[
+                    {name:'Tới',age:'25',class:'HTTTT'},
+                    {name:'Thúy Anh',age:'25',class:'HTTTT1'},
+                    {name:'Út',age:'25',class:'HTTTT2'},
+                ]
+            }
+
+        });
+    </script>
+</body>
+
+</html>

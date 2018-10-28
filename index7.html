@@ -15,6 +15,15 @@
         <p v-if="xacdinh">Yes, I am<span>a doctor</span></p>
         <p v-else>No, I am IT</p>
         <button @click="xacdinh = !xacdinh">Change condition</button>
+
+        <template v-if='xacdinh'>
+            <div>Menu 1</div>
+            <div>Menu 1</div>
+            <div>Menu 1</div>
+            <div>Menu 1</div>
+            <div>Menu 1</div>
+        </template>
+
     </div>
     <script>
         new Vue({

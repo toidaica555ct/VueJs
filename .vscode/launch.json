@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "http://localhost:8000/VueJs/index5.html",
+            "url": "http://localhost:8000/VueJs/index6.html",
             "webRoot": "${workspaceFolder}"
         }
     ]
